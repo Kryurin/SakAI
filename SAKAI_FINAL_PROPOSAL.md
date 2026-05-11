@@ -46,8 +46,8 @@ To develop **SakAI**, a web-based AI-powered commuter assistant that provides re
 SakAI is a responsive web-based AI application accessible through any modern browser on mobile and desktop devices, requiring no installation—a critical factor for accessibility across all income levels.
 
 *   **Platform:** Responsive Web Application built with **React 19 and Vite 8** for industry-leading performance.
+*   **Maps & Geospatial:** Google Maps Platform (Maps, Places, and Geocoding APIs) for high-precision landmark resolution and visual routing.
 *   **AI Reasoning:** Powered by the **Gemini 2.0 Flash API**, which interprets informal geographic language and maps it to a structured JSON route database.
-*   **Geospatial Data:** Uses the **OpenStreetMap API** via **Leaflet.js** for landmark visualization and map context without licensing costs.
 *   **Backend & Storage:** Utilizes **Firebase** for moderated community bulletins and the **browser’s LocalStorage API** for the Pamasahe Tracker and Suki Routes, ensuring 100% user privacy and no backend dependency for personal data.
 
 ---

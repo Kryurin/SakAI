@@ -110,7 +110,6 @@ Follow `SETUP_GUIDE.md` for:
 
 ### 2. Configure Environment
 ```bash
-# In SakAI/ directory
 cp .env.example .env
 # Edit .env with your API keys
 ```

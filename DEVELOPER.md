@@ -135,7 +135,7 @@ export const WALK_RADIUS_METERS = 400; // Increase/decrease as needed
 In browser console:
 
 ```javascript
-import { calculateFare } from './services/fareService.js';
+import { calculateFare } from './src/services/fareService.js';
 
 const result = calculateFare(10, 'regular'); // 10km, regular passenger
 console.log(result);
@@ -146,7 +146,7 @@ console.log(result);
 In browser console:
 
 ```javascript
-import { geocodeAddress } from './services/mapsService.js';
+import { geocodeAddress } from './src/services/mapsService.js';
 
 const coords = await geocodeAddress("Mandurriao Plaza");
 console.log(coords);
@@ -157,7 +157,7 @@ console.log(coords);
 In browser console:
 
 ```javascript
-import { generateCommuteInstructions } from './services/geminiService.js';
+import { generateCommuteInstructions } from './src/services/geminiService.js';
 
 const route = { /* route object */ };
 const response = await generateCommuteInstructions(route, 'regular');

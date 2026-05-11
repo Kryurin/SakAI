@@ -277,10 +277,6 @@ When adding new routes:
 3. Use accurate GPS coordinates
 4. Test with nearby stop detection
 
-## License
-
-TBA
-
 ## Support
 
 For issues or questions, refer to:

@@ -5,7 +5,7 @@ An AI-powered jeepney commuting guide web application for Iloilo City. SakAI hel
 ## Project Structure
 
 ```
-SakAI/
+.
 ├── public/                 # Static assets
 ├── src/
 │   ├── components/         # React components
@@ -35,7 +35,7 @@ SakAI/
 │   ├── App.css             # App styling
 │   ├── style.css           # Global styles
 │   ├── firebase.js         # Firebase config
-│   └── main.js             # React entry point
+│   └── main.jsx            # React entry point
 ├── index.html              # HTML entry point
 ├── vite.config.js          # Vite configuration
 ├── package.json            # Dependencies
@@ -50,7 +50,6 @@ SakAI/
 Dependencies are already installed. If needed:
 
 ```bash
-cd SakAI
 npm install
 ```
 

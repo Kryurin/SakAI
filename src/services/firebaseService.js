@@ -23,6 +23,9 @@ const googleProvider = new GoogleAuthProvider();
  * @returns {Promise<object>} User object
  */
 export async function signInWithGoogle() {
+  if (!auth) {
+    return { success: false, error: 'Firebase not initialized' };
+  }
   try {
     const result = await signInWithPopup(auth, googleProvider);
     return {
@@ -48,6 +51,7 @@ export async function signInWithGoogle() {
  * @returns {Promise<boolean>} Success status
  */
 export async function signOutUser() {
+  if (!auth) return false;
   try {
     await signOut(auth);
     return true;
@@ -63,6 +67,10 @@ export async function signOutUser() {
  * @returns {function} Unsubscribe function
  */
 export function onAuthChange(callback) {
+  if (!auth) {
+    callback(null);
+    return () => {};
+  }
   return onAuthStateChanged(auth, (user) => {
     if (user) {
       callback({
@@ -82,14 +90,13 @@ export function onAuthChange(callback) {
  * @returns {object|null} Current user or null
  */
 export function getCurrentUser() {
-  return auth.currentUser
-    ? {
-        uid: auth.currentUser.uid,
-        email: auth.currentUser.email,
-        displayName: auth.currentUser.displayName,
-        photoURL: auth.currentUser.photoURL,
-      }
-    : null;
+  if (!auth || !auth.currentUser) return null;
+  return {
+    uid: auth.currentUser.uid,
+    email: auth.currentUser.email,
+    displayName: auth.currentUser.displayName,
+    photoURL: auth.currentUser.photoURL,
+  };
 }
 
 /**
@@ -99,6 +106,7 @@ export function getCurrentUser() {
  * @returns {Promise<object>} Saved route with ID
  */
 export async function saveRoute(uid, routeData) {
+  if (!db) return { success: false, error: 'Firebase not initialized' };
   try {
     const routeDoc = {
       ...routeData,
@@ -131,6 +139,7 @@ export async function saveRoute(uid, routeData) {
  * @returns {Promise<array>} Array of saved routes
  */
 export async function getSavedRoutes(uid) {
+  if (!db) return { success: false, error: 'Firebase not initialized', routes: [] };
   try {
     const q = query(collection(db, 'users', uid, 'savedRoutes'));
     const querySnapshot = await getDocs(q);
@@ -164,6 +173,7 @@ export async function getSavedRoutes(uid) {
  * @returns {Promise<boolean>} Success status
  */
 export async function deleteSavedRoute(uid, routeId) {
+  if (!db) return { success: false, error: 'Firebase not initialized' };
   try {
     await deleteDoc(doc(db, 'users', uid, 'savedRoutes', routeId));
     return {

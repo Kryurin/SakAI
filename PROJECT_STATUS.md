@@ -9,7 +9,7 @@ SakAI has been fully implemented according to the system requirements. All compo
 ## 📁 Complete Project Structure
 
 ```
-SakAI/
+.
 ├── .env                          # Environment variables (fill with API keys)
 ├── .env.example                  # Template for environment variables
 ├── .gitignore                    # Git ignore rules
@@ -18,7 +18,7 @@ SakAI/
 ├── index.html                    # HTML entry point
 │
 ├── src/
-│   ├── main.js                   # React entry point
+│   ├── main.jsx                  # React entry point
 │   ├── App.jsx                   # Main app component
 │   ├── App.css                   # App styles
 │   ├── style.css                 # Global styles (comprehensive UI framework)
@@ -110,7 +110,6 @@ Follow `SETUP_GUIDE.md` for:
 
 ### 2. Configure Environment
 ```bash
-# In SakAI/ directory
 cp .env.example .env
 # Edit .env with your API keys
 ```

@@ -151,11 +151,10 @@ service cloud.firestore {
 
 ### 4.1 Create .env File
 
-1. Navigate to `SakAI/` directory
+1. Navigate to the project root directory
 2. Copy `.env.example` to `.env`:
 
 ```bash
-cd SakAI
 cp .env.example .env
 ```
 
@@ -201,7 +200,6 @@ VITE_FIREBASE_APP_ID=1:1234567890:web:abcdefghijklmno123456789
 ### 5.1 Install Packages
 
 ```bash
-cd SakAI
 npm install
 ```
 

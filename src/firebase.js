@@ -11,13 +11,22 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase only if API key is present
+let app;
+let auth = null;
+let db = null;
 
-// Initialize Authentication
-export const auth = getAuth(app);
+if (firebaseConfig.apiKey) {
+  try {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+  } catch (error) {
+    console.error('Firebase initialization error:', error);
+  }
+} else {
+  console.warn('Firebase API key is missing. Authentication and database features will be disabled.');
+}
 
-// Initialize Firestore
-export const db = getFirestore(app);
-
+export { auth, db };
 export default app;

@@ -1,0 +1,32 @@
+/* App.css - App-specific styling */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-footer {
+  background: var(--bg-light);
+  border-top: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.app-footer p {
+  margin: 8px 0;
+}
+
+.app-footer .disclaimer {
+  font-size: 12px;
+}
